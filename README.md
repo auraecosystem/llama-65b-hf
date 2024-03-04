@@ -1,5 +1,108 @@
 ---
 license: other
+model-index:
+- name: llama-65b-hf
+  results:
+  - task:
+      type: text-generation
+      name: Text Generation
+    dataset:
+      name: AI2 Reasoning Challenge (25-Shot)
+      type: ai2_arc
+      config: ARC-Challenge
+      split: test
+      args:
+        num_few_shot: 25
+    metrics:
+    - type: acc_norm
+      value: 63.31
+      name: normalized accuracy
+    source:
+      url: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard?query=Enoch/llama-65b-hf
+      name: Open LLM Leaderboard
+  - task:
+      type: text-generation
+      name: Text Generation
+    dataset:
+      name: HellaSwag (10-Shot)
+      type: hellaswag
+      split: validation
+      args:
+        num_few_shot: 10
+    metrics:
+    - type: acc_norm
+      value: 86.09
+      name: normalized accuracy
+    source:
+      url: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard?query=Enoch/llama-65b-hf
+      name: Open LLM Leaderboard
+  - task:
+      type: text-generation
+      name: Text Generation
+    dataset:
+      name: MMLU (5-Shot)
+      type: cais/mmlu
+      config: all
+      split: test
+      args:
+        num_few_shot: 5
+    metrics:
+    - type: acc
+      value: 63.84
+      name: accuracy
+    source:
+      url: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard?query=Enoch/llama-65b-hf
+      name: Open LLM Leaderboard
+  - task:
+      type: text-generation
+      name: Text Generation
+    dataset:
+      name: TruthfulQA (0-shot)
+      type: truthful_qa
+      config: multiple_choice
+      split: validation
+      args:
+        num_few_shot: 0
+    metrics:
+    - type: mc2
+      value: 43.43
+    source:
+      url: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard?query=Enoch/llama-65b-hf
+      name: Open LLM Leaderboard
+  - task:
+      type: text-generation
+      name: Text Generation
+    dataset:
+      name: Winogrande (5-shot)
+      type: winogrande
+      config: winogrande_xl
+      split: validation
+      args:
+        num_few_shot: 5
+    metrics:
+    - type: acc
+      value: 82.48
+      name: accuracy
+    source:
+      url: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard?query=Enoch/llama-65b-hf
+      name: Open LLM Leaderboard
+  - task:
+      type: text-generation
+      name: Text Generation
+    dataset:
+      name: GSM8k (5-shot)
+      type: gsm8k
+      config: main
+      split: test
+      args:
+        num_few_shot: 5
+    metrics:
+    - type: acc
+      value: 44.81
+      name: accuracy
+    source:
+      url: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard?query=Enoch/llama-65b-hf
+      name: Open LLM Leaderboard
 ---
 
 LLaMA-65B converted to work with Transformers/HuggingFace. This is under a special license, please see the LICENSE file for details.
@@ -163,4 +266,18 @@ Risks and harms of large language models include the generation of harmful, offe
 
 **Use cases**
 LLaMA is a foundational model, and as such, it should not be used for downstream applications without further investigation and mitigations of risks. These risks and potential fraught use cases include, but are not limited to: generation of misinformation and generation of harmful, biased or offensive content.
+
+
+# [Open LLM Leaderboard Evaluation Results](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
+Detailed results can be found [here](https://huggingface.co/datasets/open-llm-leaderboard/details_Enoch__llama-65b-hf)
+
+|             Metric              |Value|
+|---------------------------------|----:|
+|Avg.                             |63.99|
+|AI2 Reasoning Challenge (25-Shot)|63.31|
+|HellaSwag (10-Shot)              |86.09|
+|MMLU (5-Shot)                    |63.84|
+|TruthfulQA (0-shot)              |43.43|
+|Winogrande (5-shot)              |82.48|
+|GSM8k (5-shot)                   |44.81|
 
